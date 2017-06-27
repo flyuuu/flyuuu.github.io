@@ -146,6 +146,108 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux Shell" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/27/Linux Shell/">Linux Shell</a>
+    </h1>
+  
+
+        
+        <a href="/2017/06/27/Linux Shell/" class="archive-article-date">
+  	<time datetime="2017-06-27T08:21:57.341Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-06-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[toc]</p>
+<hr>
+<h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h1><h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><p>和java、C等一样，变量的命名，允许下划线和字母开头的中间可以加入数字的命名规则。<br>而读取变量是需要加 ==$== 符号才能使用.</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">myvar=<span class="string">"hello world"</span></div><div class="line">echo <span class="variable">$myvar</span></div></pre></td></tr></table></figure>
+<h2 id="输入、输出重定向"><a href="#输入、输出重定向" class="headerlink" title="输入、输出重定向"></a>输入、输出重定向</h2><table>
+<thead>
+<tr>
+<th>符号</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>==&gt;==</td>
+<td>输出重定向</td>
+</tr>
+<tr>
+<td>==&gt;&gt;==</td>
+<td>输出重定向（追加）</td>
+</tr>
+<tr>
+<td>==&lt;==</td>
+<td>输入重定向</td>
+</tr>
+<tr>
+<td>==\</td>
+<td>==</td>
+<td>管道</td>
+</tr>
+</tbody>
+</table>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&gt; echo &quot;string&quot; &gt; file.txt  # 将字符串 string 写入到 file.txt 如果文件不存在，则新建，如果存在则覆盖</div><div class="line">&gt; echo &quot;string&quot; &gt;&gt; file.txt  # 将字符串 string 写入到 file.txt 如果文件不存在，则新建，如果存在则追加到文本后面</div><div class="line">&gt; cat &lt; filt.txt # 将文件file.txt输入到终端</div><div class="line"></div><div class="line">&gt; who | wc -l  # 通过管道将第一个命令who得到的结果作为第二命令的输入</div></pre></td></tr></table></figure></p>
+<h2 id="tr命令"><a href="#tr命令" class="headerlink" title="tr命令"></a>tr命令</h2><p>tr（translate缩写）主要用于删除文件中的控制字符，或进行字符转换。</p>
+<p>&gt;</p>
+<blockquote>
+<p>语法： tr [options] source-char-list replace-char-list<br>tr [–c/d/s/t] [SET1] [SET2] #SET1: 字符集1；SET2：字符集2</p>
+<p>==-c==：complement，用SET2替换除SET1以外的字符。<br>==-d==：delete，删除SET1中所有的字符，不转换。<br>==-s==：squeeze-repeats，压缩SET1中重复的字符。<br>==-t==：truncate-set1，将SET1用SET2转换，一般缺省为-t。</p>
+</blockquote>
+<p>例如：我们需要实现查看PATH里面含有java 的路径</p>
+<blockquote>
+<p>/home/fly/anaconda2/bin:/usr/local/scala/scala2.11/bin:/usr/local/java/jdk1.8/bin:/usr/local/java/jdk1.8/jre/bin:/usr/local/java/jdk1.8:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">echo $PATH | tr &apos;:&apos; &apos;\n&apos; | grep java | sort</div></pre></td></tr></table></figure>
+<h2 id="特殊文件"><a href="#特殊文件" class="headerlink" title="特殊文件"></a>特殊文件</h2><p>/dev/null  # 传送到此处的文件数据都会被系统丢掉 （所以需要注意使用）<br>/dev/tty  # 从终端读取字符</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Shell,Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/06/27/Linux Shell/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+  
     <article id="post-filename" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
